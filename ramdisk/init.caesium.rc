@@ -68,3 +68,9 @@ on property:persist.spectrum.profile=3
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 2188800
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 2342400
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 2342400
+
+# Hardware keys backlight control
+on property:persist.hwkeys.backlight=enabled
+    write /sys/class/leds/button-backlight/max_brightness 40
+on property:persist.hwkeys.backlight=disabled
+    write /sys/class/leds/button-backlight/max_brightness 0
