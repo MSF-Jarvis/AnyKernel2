@@ -20,7 +20,7 @@ write  /sys/module/msm_thermal/parameters/temp_threshold 50
 write  /sys/module/msm_thermal/parameters/core_limit_temp_degC 60
 
 # Tune the sda block
-write  /sys/block/sda/queue/read_ahead_kb 2048
+write  /sys/block/sda/queue/read_ahead_kb 128
 write  /sys/block/sda/queue/iosched/back_seek_penalty 4
 write  /sys/block/sda/queue/iosched/low_latency 0
 write  /sys/block/sda/queue/iosched/target_latency_us 300
