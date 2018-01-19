@@ -34,7 +34,8 @@ chown -R root:root $ramdisk/*;
 android_ver=$(mount /system; grep "^ro.build.version.release" /system/build.prop | cut -d= -f2; umount /system);
 case "$android_ver" in
   "6.0"|"6.0.1") compatibility_string="your version is unsupported, expect no support from the kernel developer!";;
-  "7.0"|"7.1"|"7.1.1"|"7.1.2"|"8.0.0") compatibility_string="your version is supported!";;
+  "7.0"|"7.1"|"7.1.1"|"7.1.2") compatibility_string="your version is supported!";;
+  "8.0.0"|"8.1.0") compatibility_string="your version is supported!" && wipe_fstab=true;;
 esac;
 
 ui_print "Running Android $android_ver, $compatibility_string";
@@ -44,6 +45,9 @@ dump_boot;
 
 # begin ramdisk changes
 insert_line init.qcom.rc "init.caesium.rc" after "import init.target.rc" "import /init.caesium.rc"
+
+# Delete /system fstab mount (it's mounted in the kernel now)
+[[ $wipe_fstab ]] && remove_line fstab.qcom "/dev/block/bootdevice/by-name/system"
 
 # end ramdisk changes
 
