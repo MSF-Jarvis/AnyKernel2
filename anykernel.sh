@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=Flash Kernel for the Pixel 2 (XL) by @nathanchance
+kernel.string=Caesium Kernel for the Pixel 2 (XL) by @MSFJarvis
 do.devicecheck=1
 do.modules=0
 do.cleanup=1
