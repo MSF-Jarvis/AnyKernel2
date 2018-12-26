@@ -11,6 +11,10 @@ do.cleanup=1
 do.cleanuponabort=0
 device.name1=taimen
 device.name2=walleye
+device.name3=
+device.name4=
+device.name5=
+supported.versions=
 '; } # end properties
 
 # shell variables
