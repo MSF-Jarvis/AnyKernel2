@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=Illusion Kernel by akhilnarang
+kernel.string=Caesium Kernel by msfjarvis
 do.devicecheck=1
 do.modules=0
 do.cleanup=1
